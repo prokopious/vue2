@@ -1,5 +1,12 @@
 <template>
-  <div class="container">
+ <div class="container">
+<div class="user-info">
+  <button id="left">Log In</button>
+  <button id="right">Sign Up</button>
+</div>
+
+
+ 
     <div>
       <logo />
       <h1 class="title">
@@ -9,15 +16,16 @@
         My polished Nuxt.js project
       </h2>
       <p v-if="!isLoggedIn">Log in with depi@mail-maker.net : password</p>
-      <p>You should only be able to view the Protected Page after logging in. You should be redirected back home if you try to go to the Protected Page and you are not logged in.</p>
+      <p>You should only be able tozzzzzzzzzzzzzzzzzzz view the Protected Page after logging in. You should be redirected back home if you try to go to the Protected Page and you are not logged in.</p>
       <h3 v-if="isLoggedIn" class="greetings">Hello, authorized user! Go to your <nuxt-link to="/protected">protected page</nuxt-link>.</h3>
       <div class="links">
         <div v-if="isLoggedIn" v-on:click="triggerNetlifyIdentityAction('logout')" class="button--grey">Logout</div>
         <div v-else v-on:click="triggerNetlifyIdentityAction('login')" class="button--grey">Login</div>
+        <div v-else v-on:click="triggerNetlifyIdentityAction('signup')" class="button--grey">Signup</div>
         <nuxt-link to="/protected" class="button--green">
           Protected Page
         </nuxt-link>
-        <div v-if="!isLoggedIn" v-on:click="circumvent" class="button--green">Circumvent</div>
+        <div v-if="!isLoggedIn" v-on:click="triggerNetlifyIdentityAction('signup')" class="button--green">Circumvent</div>
       </div>
     </div>
   </div>
@@ -61,6 +69,9 @@ export default {
   }
 }
 </script>
+
+
+
 
 <style>
 .container {
